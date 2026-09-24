@@ -1,0 +1,17 @@
+# LayerVerse editing config for FLUX.1-dev (15 steps).
+selected_blocks_url: "selected_combinations_config.yaml"  # resolved next to this file
+
+use_KV_injection: True
+
+# Automatic editing mask: cross-attention of blocks B* read at step t* of a
+# mask_setting_num_steps-step schedule. save_mask writes it next to each edit.
+use_mask: True
+save_mask: False
+mask_setting: [{'timestep': 11, 'blocks_indices': [14, 17, 18, 23]}]
+mask_setting_num_steps: 15
+
+# Steps during which the global blocks inject source K/V.
+global_timestep_starts: [0]
+global_timestep_ends: [14]
+
+seeds: [1234]

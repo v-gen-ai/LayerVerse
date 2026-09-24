@@ -1,0 +1,11 @@
+# LayerVerse editing config for SD3.5-medium (28 steps).
+selected_blocks_url: "selected_combinations_config.yaml"  # resolved next to this file
+
+use_KV_injection: True
+
+# Automatic editing mask: cross-attention of blocks B* read at step t* of a
+# mask_setting_num_steps-step schedule (independent of the editing step count).
+use_mask: True
+mask_blocks: [7, 9, 13, 23]
+mask_sigma_index: 7
+mask_setting_num_steps: 15

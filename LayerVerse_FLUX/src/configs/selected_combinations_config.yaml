@@ -1,0 +1,11 @@
+# Calibrated block allocation for FLUX.1-dev (0-based indices): N = 8 active blocks,
+# N_str = 1 of them a global anchor. single_blocks / double_blocks list every active
+# block; the global_* subset is injected everywhere, the rest outside the editing mask.
+selected_blocks_list: [
+  {
+    "single_blocks": [32, 33, 34, 35, 36, 37],
+    "double_blocks": [1, 2],
+    "global_single_blocks": [],
+    "global_double_blocks": [2]
+  },
+]

@@ -1,0 +1,19 @@
+LayerVerse
+Copyright 2026 The LayerVerse Authors
+
+This repository includes code adapted from the projects below. Files that were
+modified say so in their first lines; the other files are used unchanged.
+
+LayerVerse_FLUX/
+  UniEdit-Flow (https://github.com/DSL-Lab/UniEdit-Flow), built on the FLUX
+  reference implementation by Black Forest Labs
+  (https://github.com/black-forest-labs/flux).
+  Apache License 2.0, see LayerVerse_FLUX/LICENSE.
+
+LayerVerse_SD3.5/
+  Stable Diffusion 3.5 reference implementation by Stability AI
+  (https://github.com/Stability-AI/sd3.5).
+  MIT License, see LayerVerse_SD3.5/LICENSE-CODE. Parts of other_impls.py come
+  from Hugging Face Transformers (Apache License 2.0).
+
+No model weights are distributed with this repository.

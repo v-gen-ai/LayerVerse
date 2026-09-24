@@ -1,0 +1,24 @@
+# Model weights, benchmark data, calibration tables and generated edits.
+# These directories ship empty; see README.md for what to put in them.
+ckpts/*
+data/*
+calibration_with_MILP/calibration_data/*
+results/
+!ckpts/.gitkeep
+!data/.gitkeep
+!calibration_with_MILP/calibration_data/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
