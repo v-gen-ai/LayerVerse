@@ -627,4 +627,30 @@
     if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)
       box.close();
   });
+  const copyButton = $('copy-bibtex');
+  copyButton?.addEventListener('click', async () => {
+    const code = $('bibtex-code');
+    const status = $('bibtex-copy-status');
+    if (!code || !status)
+      return;
+    try {
+      if (!navigator.clipboard?.writeText)
+        throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(code.textContent);
+      status.textContent = 'BibTeX copied.';
+    }
+    catch {
+      const selection = window.getSelection();
+      if (selection) {
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        status.textContent = 'BibTeX selected. Press Ctrl+C or ⌘C to copy.';
+      }
+      else {
+        status.textContent = 'Select the citation above and copy it manually.';
+      }
+    }
+  });
 })();

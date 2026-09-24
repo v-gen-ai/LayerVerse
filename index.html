@@ -40,9 +40,10 @@
                 <p class="corresponding-author" id="corresponding-author"><span class="correspondence-label"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>Corresponding author:</span> <span>zhirnov.m.d@gmail.com</span></p>
                 <div class="publication-links">
                   <span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6255.pdf" id="paper-link" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h6"></path></svg><span>Paper</span></a></span>
+                  <span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://github.com/v-gen-ai/LayerVerse" id="code-link" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.53 16 8c0-4.42-3.58-8-8-8Z"></path></svg><span>Code</span></a></span>
                   <span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://eccv.ecva.net/media/PosterPDFs/ECCV%202026/4504.png?t=1788231501.6361976" id="poster-link" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="20" rx="1" width="16" x="4" y="2"></rect><path d="M7 6h10M7 10h4v8H7zM14 10h3M14 14h3M14 18h3"></path></svg><span>Poster</span></a></span>
                   <span class="link-block"><a class="external-link button is-normal is-rounded is-dark" href="https://www.youtube.com/watch?v=eqUzqyT6K2g" id="video-link" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="4" width="20" x="2" y="5"></rect><path d="m10 9 6 3-6 3z"></path></svg><span>Video</span></a></span>
-                  <span class="link-block"><button aria-label="BibTeX — Coming Soon" class="button is-normal is-rounded is-dark resource-unavailable" disabled="" id="bibtex-link" title="The official BibTeX entry will be added when published by ECCV." type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M9 5H5v7h4V9H7M19 5h-4v7h4V9h-2M8 15l-3 4M18 15l-3 4"></path></svg><span>BibTeX</span><span class="resource-status">Coming Soon</span></button></span>
+                  <span class="link-block"><a class="button is-normal is-rounded is-dark" href="#BibTeX" id="bibtex-link"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M9 5H5v7h4V9H7M19 5h-4v7h4V9h-2M8 15l-3 4M18 15l-3 4"></path></svg><span>BibTeX</span></a></span>
                 </div>
                 <nav aria-label="Page sections" class="paper-toc">
                   <a href="#abstract">Abstract</a>
@@ -127,6 +128,15 @@
       <section aria-labelledby="method-title" class="section" id="method">
         <div class="container">
           <h2 class="title is-2 has-text-centered" id="method-title">Method</h2>
+          <section aria-labelledby="motivation-title" class="motivation">
+            <h3 class="title is-3 has-text-centered" id="motivation-title">Motivation: the KV-Injection Dilemma</h3>
+            <p>Reusing the source image’s attention keys and values (KV) helps preserve its content. The challenge is to retain the background and object structure while allowing the requested edit.</p>
+            <ul>
+              <li><p><strong>Global injection collapse.</strong> Source features injected across the image can dominate generation and pull the result toward the original. Even a few global injections can prevent a meaningful edit.</p></li>
+              <li><p><strong>Masked inpainting pitfall.</strong> Background-only injection preserves unedited pixels but withholds source features from the editing region. The object may be synthesized from scratch, losing its shape, pose, or identity.</p></li>
+            </ul>
+            <p class="motivation-takeaway"><strong>Which blocks should receive source features — and should the injection be masked or global?</strong></p>
+          </section>
           <div class="method-intro">
             <h3 class="title is-3"><strong><em>LayerVerse</em></strong> Finds the Right Role for Each Block</h3>
             <p>Jointly select block identity and injection scope: inactive, masked, or global.</p>
@@ -746,10 +756,20 @@
         </div>
       </section>
       <section aria-labelledby="bibtex-title" class="section bibtex-section" id="BibTeX">
-        <div class="container is-max-desktop has-text-centered">
-          <h2 class="title is-2" id="bibtex-title">BibTeX</h2>
-          <p class="bibtex-status">Coming Soon</p>
-          <p class="bibtex-note">The publisher-provided BibTeX entry will be added here once available.</p>
+        <div class="container is-max-desktop">
+          <h2 class="title is-2 has-text-centered" id="bibtex-title">BibTeX</h2>
+          <pre aria-label="BibTeX citation" class="bibtex-code" tabindex="0"><code id="bibtex-code">@inproceedings{zhirnov2026layerverse,
+  title={LayerVerse: Finding the Sweet Spot for KV-Injection in Training-Free Image Editing},
+  author={Zhirnov, Mikhail and Kuzhamuratov, Arsen and Kuznetsov, Andrey and Oseledets, Ivan and Sobolev, Konstantin},
+  booktitle={European Conference on Computer Vision},
+  pages={96--113},
+  year={2026},
+  organization={Springer}
+}</code></pre>
+          <div class="bibtex-actions">
+            <p class="bibtex-copy-status" id="bibtex-copy-status" role="status"></p>
+            <button class="button is-rounded js-only" id="copy-bibtex" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg><span>Copy BibTeX</span></button>
+          </div>
         </div>
       </section>
     </main>

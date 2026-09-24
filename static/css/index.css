@@ -441,6 +441,41 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   line-height: 1.75;
 }
 
+.motivation {
+  max-width: 930px;
+  margin: 0 auto 36px;
+}
+
+.motivation .title {
+  margin-bottom: 18px;
+}
+
+.motivation p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.motivation ul {
+  margin: 12px 0 0;
+  padding-left: 1.4em;
+  list-style-type: disc;
+}
+
+.motivation li+li {
+  margin-top: 12px;
+}
+
+.motivation .motivation-takeaway {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border: 1px solid #dce3e9;
+  border-left: 3px solid var(--blue);
+  border-radius: 5px;
+  background: #f7f9fb;
+  color: var(--blue-deep);
+  text-align: left;
+}
+
 .method-intro {
   text-align: center;
   margin-bottom: 25px;
@@ -1630,14 +1665,6 @@ dialog::backdrop {
   border-color: #b1c6d7;
 }
 
-.button.resource-unavailable, .button.resource-unavailable:hover {
-  color: #e5e5e5;
-  background: #686868;
-  border-color: #686868;
-  cursor: default;
-  opacity: .72;
-}
-
 .teaser-grid {
   gap: 28px;
 }
@@ -2396,13 +2423,6 @@ figure > figcaption, .figure-caption, .table-caption, .gallery-note, .scroll-hin
   font-size: 14px;
 }
 
-.resource-status {
-  font-size: 12px;
-  font-weight: 500;
-  padding-left: 7px;
-  border-left: 1px solid #aaa;
-}
-
 #injection-roles > h3 {
   font-size: 24px;
   font-weight: 600;
@@ -2443,17 +2463,59 @@ figure > figcaption, .figure-caption, .table-caption, .gallery-note, .scroll-hin
   margin-bottom: 20px;
 }
 
-.bibtex-status {
-  color: var(--blue-deep);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.bibtex-code {
+  margin: 0;
+  padding: 22px 24px;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
 }
 
-.bibtex-note {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.65;
-  max-width: 620px;
-  margin: auto;
+.bibtex-code code {
+  font: inherit;
+}
+
+.bibtex-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.bibtex-actions .button {
+  flex: none;
+  font-size: 14px;
+}
+
+.bibtex-copy-status {
+  color: var(--blue-deep);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .motivation {
+    margin-bottom: 30px;
+  }
+
+  .bibtex-code {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .bibtex-actions {
+    flex-wrap: wrap;
+  }
+
+  .bibtex-actions .button {
+    margin-left: auto;
+  }
 }
